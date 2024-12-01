@@ -32,12 +32,12 @@ export const Hero = () => {
             className={"relative grid min-h-screen place-content-center overflow-hidden text-gray-200"}
         >
             <div className={"z-10 -translate-y-4 flex flex-col items-center"}>
-                <span
-                    className={"mb-1.5 flex items-center justify-start rounded-full bg-green-600/50 px-4 py-2 text-sm"}
-                >
-                    <FaCheck className={`mr-1 fill-green-400`}/>
-                    Open for work
-                </span>
+                {/*<span*/}
+                {/*    className={"mb-1.5 flex items-center justify-start rounded-full bg-green-600/50 px-4 py-2 text-sm"}*/}
+                {/*>*/}
+                {/*    <FaCheck className={`mr-1 fill-green-400`}/>*/}
+                {/*    Open for work*/}
+                {/*</span>*/}
 
                 <h1 className={"text-white/40 text-5xl md:text-7xl font-black"}>Hi, I'm</h1>
                 <h1 className={"max-w-3xl bg-gradient-to-br from-white to-gray-400 bg-clip-text font-black " +
@@ -62,15 +62,16 @@ export const Hero = () => {
                     Recent <b>Software Development</b> graduate, with over <i>two years</i> of professional fullstack experience
                 </p>
 
-                <motion.button
+                <motion.a
                     style={{border, boxShadow}}
                     whileHover={{scale: 1.015}}
                     whileTap={{scale: 0.985}}
                     className={"flex w-fit items-center gap-2 rounded-full px-4 py-3"}
+                    href={'/jake_edwards_resume.pdf'} download
                 >
                     Download Resume
                     <FiArrowRight className={""}/>
-                </motion.button>
+                </motion.a>
             </div>
 
             <div className={"bg-circle-container"}>
