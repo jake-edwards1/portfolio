@@ -31,24 +31,12 @@ export const Hero = () => {
             className={"relative grid min-h-screen place-content-center overflow-hidden text-gray-200"}
         >
             <div className={"z-10 -translate-y-4 flex flex-col items-center"}>
-                {/*<span*/}
-                {/*    className={"mb-1.5 flex items-center justify-start rounded-full bg-green-600/50 px-4 py-2 text-sm"}*/}
-                {/*>*/}
-                {/*    <FaCheck className={`mr-1 fill-green-400`}/>*/}
-                {/*    Open for work*/}
-                {/*</span>*/}
 
                 <h1 className={"text-white/40 text-5xl md:text-7xl font-black"}>Hi, I'm</h1>
                 <h1 className={"max-w-3xl bg-gradient-to-br from-white to-gray-400 bg-clip-text font-black " +
                     "leading-tight text-transparent text-5xl md:text-7xl"}>
                     Jake Edwards
                 </h1>
-                {/*<span*/}
-                {/*    className={"mt-3 flex items-center justify-start rounded-full bg-green-600/50 px-3 py-1.5 text-sm"}*/}
-                {/*>*/}
-                {/*    <FaCheck className={`mr-1 fill-green-400`}/>*/}
-                {/*    Open for work*/}
-                {/*</span>*/}
                 <Image
                     src={portrait}
                     alt='Jake Portrait'
