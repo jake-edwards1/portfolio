@@ -1,8 +1,8 @@
 "use client"
 
-import React, {useState, useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import Image from "next/image";
-import {useMotionTemplate, useMotionValue, motion, animate} from "framer-motion";
+import {animate, motion, useMotionTemplate, useMotionValue} from "framer-motion";
 import Link from "next/link";
 import webAdmin from "@/assets/qwa.png"
 
@@ -16,7 +16,8 @@ const projects = [
             "offices in the United states and Canada. Key features include managing and creating accounts for " +
             "dental offices, viewing billing statements and their related events, and integrating with " +
             "Active Directory for user-group-based authorization.",
-        image: webAdmin
+        image: webAdmin,
+        stack: ["React", "Next.js", "Material UI", "Java", "Spring Boot"]
     },
     {
         id: 2,
@@ -25,7 +26,8 @@ const projects = [
         description: "Mock website used for browsing movies and TV shows. Each movie has a 'details' page where " +
             "users can view ratings, plot, cast, images, etc.",
         video: "https://www.youtube.com/embed/uIucu5IqOi8?si=f2NjHpP4LXBQ4xcY",
-        link: "https://github.com/jake-edwards1/CSE341-Group-Project"
+        link: "https://github.com/jake-edwards1/CSE341-Group-Project",
+        stack: ["HTML", "SCSS", "JavaScript", "Vite", "Babel"]
     },
     {
         id: 3,
@@ -34,7 +36,8 @@ const projects = [
         description: "Kotlin mobile application that takes a city as input and returns the day's weather " +
             "information for that location.",
         video: "https://www.youtube.com/embed/3G8aiCqBAA4?si=VyfNKu7uN7g0sKtk",
-        link: "https://github.com/jake-edwards1/Weather_App"
+        link: "https://github.com/jake-edwards1/Weather_App",
+        stack: ["Kotlin", "Espresso"]
     },
 ]
 
@@ -97,11 +100,23 @@ export const Portfolio = () => {
                                     Github: <span className={"text-blue-400 hover:underline"}>{project.link}</span>
                                 </Link>
                             )}
+                            {selectedProject.id === project.id && project.stack && (
+                                <ul className={"flex flex-row pt-2 space-x-3"}>
+                                    {project.stack.map((link, i) => (
+                                        <li
+                                            key={i}
+                                            className={"rounded-full bg-gray-600/50 px-3 py-1.5 text-sm"}
+                                        >
+                                            {link}
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
+
                         </div>
                     ))}
                 </div>
                 {selectedProject.image &&
-                    // <div className={"w-full h-full overflow-hidden rounded-lg"}>
                     <Image
                         src={selectedProject.image.src}
                         alt={selectedProject.title}
@@ -109,7 +124,6 @@ export const Portfolio = () => {
                         width={800}
                         height={450}
                     />
-                    // </div>
                 }
                 {selectedProject.video &&
                     <iframe
