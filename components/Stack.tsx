@@ -1,7 +1,7 @@
 import React from "react"
-import {FaReact, FaJava} from "react-icons/fa";
+import {FaReact} from "react-icons/fa";
 import {IoLogoNodejs} from "react-icons/io";
-import {SiJavascript, SiMicrosoftsqlserver, SiSpring} from "react-icons/si";
+import {SiJavascript, SiMicrosoftsqlserver} from "react-icons/si";
 import {TbBrandNextjs} from "react-icons/tb";
 
 const stackItems = [
@@ -10,8 +10,6 @@ const stackItems = [
     { id: 3, name: "JavaScript", icon: SiJavascript, color: '#3178C6'},
     { id: 4, name: "Microsoft SQL", icon: SiMicrosoftsqlserver, color: '#47A248'},
     { id: 5, name: "Next.js", icon: TbBrandNextjs, color: '#cbcbcb'},
-    // { id: 6, name: "Java", icon: FaJava, color: '#D4360E'},
-    // { id: 7, name: "Spring Boot", icon: SiSpring, color: '#6CB52D'},
 ]
 
 export const Stack = () => {
@@ -29,7 +27,6 @@ export const Stack = () => {
                             className={"flex items-center justify-center flex-col rounded-xl p-4"}
                         >
                             <div className={"mb-4 bg-white/10 p-6 rounded-xl"}>
-                            {/*<div className={"mb-4"}>*/}
                                 {React.createElement(item.icon, {
                                     className: "w-32 h-32",
                                     style: {color: item.color},

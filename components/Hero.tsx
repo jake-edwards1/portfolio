@@ -5,7 +5,6 @@ import {FiArrowRight} from "react-icons/fi";
 import {useMotionTemplate, useMotionValue, motion, animate} from "framer-motion";
 import Image from 'next/image';
 import portrait from "../assets/portrait.jpg"
-import {FaCheck} from "react-icons/fa6";
 
 const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"]
 

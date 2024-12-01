@@ -3,7 +3,6 @@ import {Hero} from "@/components/Hero";
 import {Stack} from "@/components/Stack";
 import {LogoAnimation} from "@/components/LogoAnimation";
 import {Portfolio} from "@/components/Portfolio";
-import {Contact} from "@/components/Contact";
 import {Footer} from "@/components/Footer";
 
 export default function Home() {
@@ -14,7 +13,6 @@ export default function Home() {
             <Stack />
             <LogoAnimation/>
             <Portfolio />
-            {/*<Contact />*/}
             <Footer />
         </>
     );

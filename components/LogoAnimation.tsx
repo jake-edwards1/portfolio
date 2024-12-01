@@ -6,21 +6,17 @@ import React from "react";
 import cpp_logo from "@/assets/logos/cpp.png"
 import net_logo from "@/assets/logos/net.png"
 import aws_logo from "@/assets/logos/aws.png"
-import azureLogo from "@/assets/logos/azure.png"
 import javaLogo from "@/assets/logos/java.webp"
 import cssLogo from "@/assets/logos/css.png"
 import dockerLogo from "@/assets/logos/docker.png"
 import graphQlLogo from "@/assets/logos/graphql.png"
 import htmlLogo from "@/assets/logos/html.png"
-import kotlinLogo from "@/assets/logos/kotlin.png"
 import kubernetesLogo from "@/assets/logos/kubernetes.png"
 import linuxLogo from "@/assets/logos/linux.png"
 import mySqlLogo from "@/assets/logos/mySql.png"
 import powershellLogo from "@/assets/logos/powershell.png"
 import pythonLogo from "@/assets/logos/python.webp"
-import reactNativeLogo from "@/assets/logos/reactNative.png"
 import tailwindLogo from "@/assets/logos/tailwind.png"
-import unityLogo from "@/assets/logos/unity.png"
 
 const images = [
     { src: cpp_logo, alt: "C++" },
