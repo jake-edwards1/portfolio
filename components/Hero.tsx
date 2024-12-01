@@ -2,7 +2,7 @@
 
 import React, {useEffect} from "react";
 import {FiArrowRight} from "react-icons/fi";
-import {useMotionTemplate, useMotionValue, motion, animate} from "framer-motion";
+import {animate, motion, useMotionTemplate, useMotionValue} from "framer-motion";
 import Image from 'next/image';
 import portrait from "../assets/portrait.jpg"
 
@@ -18,7 +18,7 @@ export const Hero = () => {
             repeat: Infinity,
             repeatType: "mirror"
         })
-    }, []);
+    }, [color]);
 
     const backgroundImage = useMotionTemplate`radial-gradient(125% 125% at 50% 0%, #000 50%, ${color})`
     const border = useMotionTemplate`1px solid ${color}`
@@ -46,7 +46,8 @@ export const Hero = () => {
                     className='my-5 rounded-full border-[0.25rem] border-white'
                 />
                 <p className={"mb-5 max-w-xl text-xl text-center"}>
-                    Recent <b>Software Development</b> graduate, with over <i>two years</i> of professional fullstack experience
+                    Recent <b>Software Development</b> graduate, with over <i>two years</i> of professional fullstack
+                    experience
                 </p>
 
                 <motion.a
