@@ -17,6 +17,9 @@ export const Navbar = () => {
     const toggleNav = () => {
         setNav(!nav)
     }
+    const closeNav = () => {
+        setNav(false)
+    }
 
     return (
         <div className={"z-50 fixed flex justify-center w-full text-white font-bold"}>
@@ -44,8 +47,11 @@ export const Navbar = () => {
                 <ul className={"flex flex-col items-center justify-center space-y-8 h-full"}>
                     {navlinks.map((link, i) => (
                         <li key={i}>
-                            <Link href={link.path} className={"transform hover:text-white/50" +
-                                "transition-all duration-300 ease-in-out"}>
+                            <Link
+                                href={link.path}
+                                className={"transform hover:text-white/50 transition-all duration-300 ease-in-out"}
+                                onClick={closeNav}
+                            >
                                 {link.title}
                             </Link>
                         </li>
