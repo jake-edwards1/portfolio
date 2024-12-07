@@ -12,8 +12,8 @@ const projects = [
         year: "2022-2024",
         title: "QuickBill Web Admin",
         description: "Lead developer on an Enterprise Web Application for Henry Schein One. QuickBill Web Admin " +
-            "is used internally to manage, support, and troubleshoot billing statements sent by ~25% of dental " +
-            "offices in the United states and Canada. Key features include managing and creating accounts for " +
+            "is used internally to manage, support, and troubleshoot billing statements sent by ~38% of dental " +
+            "offices in the United states. Key features include managing and creating accounts for " +
             "dental offices, viewing billing statements and their related events, and integrating with " +
             "Active Directory for user-group-based authorization.",
         image: webAdmin,
