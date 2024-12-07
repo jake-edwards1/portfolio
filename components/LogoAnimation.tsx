@@ -39,7 +39,6 @@ export const LogoAnimation = () => {
     return (
         <div className={"py-8 bg-slate-200 opacity-80"}>
             <div className={"container mx-auto text-center"}>
-                {/*<h2 className={"text-4xl font-bold mb-4 -mt-4 text-black/60"}>Coursework</h2>*/}
                 <div className={"overflow-hidden " +
                     "[mask-image:linear-gradient(to_right,_transparent,_black_25%,_transparent)]"}>
                     <motion.div
@@ -58,6 +57,7 @@ export const LogoAnimation = () => {
                                 src={image.src}
                                 alt={image.alt}
                                 height={40}
+                                quality={1}
                             />
                         ))}
                     </motion.div>
