@@ -55,7 +55,7 @@ export const Hero = () => {
                     whileHover={{scale: 1.015}}
                     whileTap={{scale: 0.985}}
                     className={"flex w-fit items-center gap-2 rounded-full px-4 py-3"}
-                    href={'/jake_edwards_resume.pdf'} download
+                    href={'/jake-edwards-resume.pdf'} download
                 >
                     Download Resume
                     <FiArrowRight className={""}/>

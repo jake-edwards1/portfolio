@@ -34,14 +34,14 @@ export default function Files() {
             >
                 <a
                     className={"group flex items-center justify-center gap-2 rounded-full px-4 py-3 focus:scale-105 hover:scale-105 active:scale-100 transition"}
-                    href={'/jake_edwards_resume.pdf'} download
+                    href={'/jake-edwards-resume1.pdf'} download
                 >
                     Support
                     <HiDownload className='opacity-60 group-hover:translate-y-1 transition cursor-pointer'/>
                 </a>
                 <a
                     className={"group flex items-center justify-center gap-2 rounded-full px-4 py-3 focus:scale-105 hover:scale-105 active:scale-100 transition"}
-                    href='/je_resume.pdf' download
+                    href='/jake-edwards-resume2.pdf' download
                 >
                     Software Engineering
                     <HiDownload className='opacity-60 group-hover:translate-y-1 transition cursor-pointer'/>
