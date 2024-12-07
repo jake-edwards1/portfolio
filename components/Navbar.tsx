@@ -22,6 +22,7 @@ export const Navbar = () => {
     }
 
     return (
+        // Desktop
         <div className={"z-50 fixed flex justify-center w-full text-white font-bold"}>
             <div className={"border border-white/20 mt-8 backdrop-blur-3xl rounded-3xl " +
                 "hidden md:flex md:items-center md:justify-center p-2 max-w-[400px] mx-auto"}>
@@ -37,7 +38,8 @@ export const Navbar = () => {
                 </ul>
             </div>
 
-            <div onClick={toggleNav} className={"md:hidden absolute top-5 right-14 border rounded" +
+            {/* Mobile */}
+            <div onClick={toggleNav} className={"md:hidden absolute top-5 right-5 border rounded" +
                 " z-50 text-white/70 border-white/70 p-2"}>
                 {nav ? <AiOutlineClose size={30} /> : <AiOutlineMenu size={30} />}
             </div>
