@@ -65,7 +65,7 @@ export const Portfolio = () => {
             className={"py-32 text-white"}
             style={{backgroundImage}}
         >
-            <div className={"max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12"}>
+            <div className={"max-w-full lg:max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12"}>
                 <div>
                     <h2 className={"text-6xl font-bold mb-10"}>
                         Selected <span className={"text-emerald-400"}>Projects</span>
@@ -101,7 +101,7 @@ export const Portfolio = () => {
                                 </Link>
                             )}
                             {selectedProject.id === project.id && project.stack && (
-                                <ul className={"flex flex-row pt-2 space-x-3"}>
+                                <ul className={"flex flex-wrap pt-2 gap-3"}>
                                     {project.stack.map((link, i) => (
                                         <li
                                             key={i}
