@@ -74,11 +74,11 @@ export const Portfolio = () => {
                         <div
                             key={project.id}
                             onClick={() => setSelectedProject(project)}
-                            className={"cursor-pointer mb-8 group"}
+                            className={"mb-8 group"}
                         >
                             <p className={"text-gray-400 text-lg mb-2"}>{project.year}</p>
-                            <h3 className={`text-3xl font-semibold group-hover:text-emerald-400 transition-colors 
-                                ${selectedProject.id === project.id ? "text-gray-200" : ""} duration-300`}
+                            <h3 className={`cursor-pointer text-3xl font-semibold group-hover:text-emerald-400 transition-colors 
+                                ${selectedProject.id === project.id ? "text-emerald-400" : ""} duration-300`}
                             >
                                 {project.title}
                             </h3>
