@@ -68,7 +68,7 @@ export const Portfolio = () => {
             <div className={"max-w-full lg:max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12"}>
                 <div>
                     <h2 className={"text-6xl font-bold mb-10"}>
-                        Selected <span className={"text-emerald-400"}>Projects</span>
+                        Selected <span className={"text-lime-400"}>Projects</span>
                     </h2>
                     {projects.map((project) => (
                         <div
@@ -77,8 +77,8 @@ export const Portfolio = () => {
                             className={"mb-8 group"}
                         >
                             <p className={"text-gray-400 text-lg mb-2"}>{project.year}</p>
-                            <h3 className={`cursor-pointer text-3xl font-semibold group-hover:text-emerald-400 transition-colors 
-                                ${selectedProject.id === project.id ? "text-emerald-400" : ""} duration-300`}
+                            <h3 className={`cursor-pointer text-3xl font-semibold hover:text-lime-600 transition-colors 
+                                ${selectedProject.id === project.id ? "text-lime-400" : ""} duration-300`}
                             >
                                 {project.title}
                             </h3>

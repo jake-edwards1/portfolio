@@ -4,6 +4,7 @@ import {Stack} from "@/components/Stack";
 import {LogoAnimation} from "@/components/LogoAnimation";
 import {Portfolio} from "@/components/Portfolio";
 import {Footer} from "@/components/Footer";
+import {Contact} from "@/components/Contact";
 
 export default function Home() {
     return (
@@ -13,6 +14,7 @@ export default function Home() {
             <Stack />
             <LogoAnimation/>
             <Portfolio />
+            <Contact />
             <Footer />
         </>
     );
