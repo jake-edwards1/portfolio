@@ -6,7 +6,7 @@ import { validateString, getErrorMessage } from "@/lib/utils";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export const sendEmail = async (formData: FormData) => {
+export const sendEmail = async (formData) => {
     const senderEmail = formData.get("senderEmail");
     const message = formData.get("message");
 
@@ -34,7 +34,7 @@ export const sendEmail = async (formData: FormData) => {
             // }),
             text: message
         });
-    } catch (error: unknown) {
+    } catch (error) {
         return {
             error: getErrorMessage(error),
         };

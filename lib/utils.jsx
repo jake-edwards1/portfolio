@@ -1,7 +1,4 @@
-export const validateString = (
-    value: unknown,
-    maxLength: number
-): value is string => {
+export const validateString = (value, maxLength) => {
     if (!value || typeof value !== "string" || value.length > maxLength) {
         return false;
     }
@@ -9,8 +6,8 @@ export const validateString = (
     return true;
 };
 
-export const getErrorMessage = (error: unknown): string => {
-    let message: string;
+export const getErrorMessage = (error) => {
+    let message;
 
     if (error instanceof Error) {
         message = error.message;
