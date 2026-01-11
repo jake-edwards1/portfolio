@@ -5,8 +5,6 @@ import { Box, Container, Typography, Accordion, AccordionSummary, AccordionDetai
 import { motion } from 'framer-motion';
 import { MdExpandMore } from 'react-icons/md';
 import { FaServer, FaNetworkWired, FaShieldAlt, FaCode, FaTools, FaDatabase } from 'react-icons/fa';
-import { BiChip } from 'react-icons/bi';
-import { HiCube } from 'react-icons/hi';
 
 const capabilities = [
     {

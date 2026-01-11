@@ -143,8 +143,8 @@ export const Philosophy = () => {
                                 fontStyle: 'italic',
                             }}
                         >
-                            "While I loved the logic of software engineering, I missed the impact.
-                            Human connection is what drives me, not just code."
+                            &ldquo;While I loved the logic of software engineering, I missed the impact.
+                            Human connection is what drives me, not just code.&rdquo;
                         </Typography>
                     </Box>
                 </Box>

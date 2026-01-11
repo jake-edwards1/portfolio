@@ -2,9 +2,8 @@
 
 import React from 'react';
 import Image from "next/image";
-import { Box, Container, Typography, Card, CardContent, Chip, Stack } from '@mui/material';
+import { Box, Container, Typography, Card, CardContent, Chip } from '@mui/material';
 import { motion } from 'framer-motion';
-import { FaExternalLinkAlt } from 'react-icons/fa';
 import webAdmin from "@/assets/qwa.png"
 
 const experiences = [
@@ -90,7 +89,7 @@ export const Experience = () => {
                         mb: 8,
                     }}
                 >
-                    {experiences.map((exp, index) => (
+                    {experiences.map((exp) => (
                         <Box
                             key={exp.id}
                             component={motion.div}
