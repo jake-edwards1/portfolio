@@ -111,7 +111,7 @@ export const Hero = () => {
                                 maxWidth: '800px',
                             }}
                         >
-                            Service-First Technical Solutions Engineer
+                            Technical Solutions & Engineering
                         </Typography>
 
                         {/* Description */}
