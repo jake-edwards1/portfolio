@@ -31,7 +31,12 @@ export const Hero = () => {
                     color: 'text.primary',
                 }}
             >
-                <Container>
+                <Container
+                    maxWidth="lg"
+                    sx={{
+                        px: { xs: 3, sm: 4, md: 6 },
+                    }}
+                >
                     <Stack
                         component={motion.div}
                         initial={{ opacity: 0, y: 20 }}
@@ -126,7 +131,7 @@ export const Hero = () => {
                                 maxWidth: '700px',
                                 fontSize: { xs: '1rem', md: '1.125rem' },
                                 textAlign: 'center',
-                                px: 2,
+                                px: { xs: 3, md: 2 },
                                 color: 'text.secondary',
                                 lineHeight: 1.8,
                             }}
