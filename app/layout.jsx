@@ -16,8 +16,27 @@ const firaCode = Fira_Code({
 });
 
 export const metadata = {
-    title: 'Jake Edwards - Service-First Technical Solutions Engineer',
-    description: 'Service-First Technical Solutions Engineer specializing in full-stack systems—from hardware and networks to software and UI. Driven by human connection and technical excellence. CompTIA A+, Network Pro, Security Pro certified.',
+    metadataBase: new URL('https://www.jakeedwards.one'),
+    title: 'Jake Edwards | Technical Solutions & Engineering',
+    description: 'Technical Solutions & Engineering professional specializing in full-stack systems—from hardware and network infrastructure to software and UI. Field engineer background with CompTIA A+, TestOut Network Pro & Security Pro certifications, pursuing CWNA. Service-first approach combining technical expertise with human connection.',
+    keywords: 'field engineer, network engineer, IT support, technical solutions engineer, infrastructure engineer, CompTIA A+, CWNA, wireless networking, network infrastructure, full-stack systems, IT certifications, hardware troubleshooting, service-first engineer',
+    authors: [{ name: 'Jake Edwards' }],
+    openGraph: {
+        type: 'website',
+        locale: 'en_US',
+        url: '/',
+        siteName: 'Jake Edwards Portfolio',
+        title: 'Jake Edwards | Technical Solutions & Engineering',
+        description: 'Technical Solutions & Engineering professional with expertise in full-stack systems, networking, and infrastructure. CompTIA A+ certified, pursuing CWNA.',
+    },
+    robots: {
+        index: true,
+        follow: true,
+    },
+};
+
+export const viewport = {
+    themeColor: '#2DD4BF',
 };
 
 export default function RootLayout({ children }) {
