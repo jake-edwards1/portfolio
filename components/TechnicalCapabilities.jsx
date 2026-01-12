@@ -14,11 +14,8 @@ const capabilities = [
         color: '#2DD4BF',
         description: "End-to-end hardware expertise from workstations to enterprise servers",
         skills: [
-            "CompTIA A+ Technologies",
-            "Server Hardware",
-            "Workstation Configuration",
-            "Component Troubleshooting",
-            "Hardware Diagnostics",
+            "CompTIA A+",
+            "Workstation/Server Hardware",
             "System Assembly & Maintenance"
         ]
     },
@@ -29,11 +26,7 @@ const capabilities = [
         color: '#14B8A6',
         description: "Network design, implementation, and troubleshooting across wired and wireless environments",
         skills: [
-            "Cisco Equipment",
-            "Wireless (CWNA)",
-            "TCP/IP Protocol Suite",
-            "VLANs & Subnetting",
-            "Routing & Switching",
+            "TCP/IP Protocol",
             "Network Troubleshooting",
             "RF Fundamentals"
         ]
@@ -48,9 +41,7 @@ const capabilities = [
             "Network Security",
             "Firewalls & IDS/IPS",
             "Security Best Practices",
-            "Threat Assessment",
             "Access Control",
-            "Vulnerability Management"
         ]
     },
     {
@@ -79,8 +70,6 @@ const capabilities = [
             "MySQL",
             "Database Design",
             "Query Optimization",
-            "Data Backup & Recovery",
-            "Integration Services"
         ]
     },
     {
@@ -92,10 +81,10 @@ const capabilities = [
         skills: [
             "Troubleshooting Methodologies",
             "Monitoring Tools",
-            "Documentation",
+            "Technical Documentation",
             "Ticketing Systems",
             "Remote Support Tools",
-            "Diagnostic Software"
+            "Agile Methodology",
         ]
     },
 ];

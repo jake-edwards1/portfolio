@@ -6,7 +6,7 @@ import {AiOutlineMenu, AiOutlineClose} from 'react-icons/ai'
 import { AppBar, Paper, Drawer, Stack, IconButton, Typography } from '@mui/material';
 
 const navlinks = [
-    {title: "About", path: "#about"},
+    {title: "About", path: ""},
     {title: "Philosophy", path: "#philosophy"},
     {title: "Capabilities", path: "#capabilities"},
     {title: "Certifications", path: "#certifications"},

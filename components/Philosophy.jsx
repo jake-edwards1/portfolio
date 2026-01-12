@@ -55,23 +55,23 @@ export const Philosophy = () => {
                     </Typography>
 
                     {/* Subtitle */}
-                    <Typography
-                        variant="h3"
-                        component={motion.p}
-                        initial={{ opacity: 0, y: -10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        sx={{
-                            fontSize: { xs: '1.125rem', md: '1.375rem' },
-                            fontWeight: 400,
-                            color: 'primary.main',
-                            mb: 6,
-                            fontFamily: 'var(--font-inter), Inter, sans-serif',
-                        }}
-                    >
-                        Why I do this
-                    </Typography>
+                    {/*<Typography*/}
+                    {/*    variant="h3"*/}
+                    {/*    component={motion.p}*/}
+                    {/*    initial={{ opacity: 0, y: -10 }}*/}
+                    {/*    whileInView={{ opacity: 1, y: 0 }}*/}
+                    {/*    viewport={{ once: true }}*/}
+                    {/*    transition={{ duration: 0.6, delay: 0.2 }}*/}
+                    {/*    sx={{*/}
+                    {/*        fontSize: { xs: '1.125rem', md: '1.375rem' },*/}
+                    {/*        fontWeight: 400,*/}
+                    {/*        color: 'primary.main',*/}
+                    {/*        mb: 6,*/}
+                    {/*        fontFamily: 'var(--font-inter), Inter, sans-serif',*/}
+                    {/*    }}*/}
+                    {/*>*/}
+                    {/*    Why I do this?*/}
+                    {/*</Typography>*/}
 
                     {/* Principles */}
                     <Box

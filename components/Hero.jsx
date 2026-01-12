@@ -72,7 +72,7 @@ export const Hero = () => {
                                     transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
 
                                     '&:hover': {
-                                        transform: 'translateY(-4px)',
+                                        transform: 'scale(1.01)',
                                         boxShadow: `
                                             0 0 40px rgba(45, 212, 191, 0.3),
                                             0 15px 50px rgba(0, 0, 0, 0.6)
@@ -136,7 +136,7 @@ export const Hero = () => {
                                 lineHeight: 1.8,
                             }}
                         >
-                            Full-stack systems expert—from hardware and networks to software and UI.
+                            Full-stack systems specialist—from hardware and networks to software and UI.
                             Driven by human connection and the desire to see technical skills improve lives.
                         </Typography>
 
