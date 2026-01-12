@@ -5,14 +5,15 @@ import Image from "next/image";
 import { Box, Container, Typography, Card, CardContent, Chip, Collapse, IconButton } from '@mui/material';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
-import webAdmin from "@/assets/qwa.png"
+import webAdmin from "@/assets/qwa.png";
+import { TypewriterText } from '@/components/TypewriterText';
 
 // Career Timeline - Add your job history here
 const jobHistory = [
     {
         id: 1,
-        title: "Support Tech III",
-        company: "Revenue Cycle Management",
+        title: "Support Tech III, Revenue Cycle Management",
+        company: "Henry Schein One",
         period: "2024 - Present",
         shortDescription: "Advanced technical support for enterprise revenue cycle systems",
         fullDescription: "Providing tier 3 technical support for complex revenue cycle management systems, troubleshooting critical issues, and ensuring system reliability for healthcare billing operations.",
@@ -51,7 +52,7 @@ const jobHistory = [
     {
         id: 3,
         title: "Support Tech I - II",
-        company: "Revenue Cycle Management",
+        company: "Henry Schein One",
         period: "2020 - 2022",
         shortDescription: "Technical support for healthcare billing systems and end users",
         fullDescription: "Provided frontline and intermediate technical support for revenue cycle management systems, assisting healthcare providers with billing operations and system issues.",
@@ -123,7 +124,8 @@ export const Experience = () => {
             }}
         >
             <Container maxWidth="lg">
-                <Typography
+                <TypewriterText
+                    text="Experience"
                     variant="h2"
                     sx={{
                         fontSize: { xs: '2.5rem', md: '3.5rem' },
@@ -132,9 +134,7 @@ export const Experience = () => {
                         textAlign: 'center',
                         color: 'text.primary',
                     }}
-                >
-                    Experience
-                </Typography>
+                />
 
                 <Typography
                     variant="body1"

@@ -6,6 +6,7 @@ import SubmitBtn from "./submit-btn";
 import toast from "react-hot-toast";
 import { Container, Box, Typography, TextField, Paper } from '@mui/material';
 import { COLORS_TOP } from "@/lib/constants";
+import { TypewriterText } from '@/components/TypewriterText';
 
 
 export const Contact = () => {
@@ -29,21 +30,16 @@ export const Contact = () => {
                 viewport={{ once: true }}
             >
                 <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-                    <Typography
-                        component={motion.h2}
+                    <TypewriterText
+                        text="Contact Me"
                         variant="h2"
-                        initial={{opacity: 0, x: -20}}
-                        whileInView={{opacity: 1, y: 0}}
-                        transition={{duration: 0.6, delay: 0.2}}
                         sx={{
                             fontSize: { xs: '2.5rem', md: '3rem', lg: '4.5rem' },
                             fontWeight: 'bold',
                             color: 'text.primary',
                             p: 0.5,
                         }}
-                    >
-                        <Box component="span" sx={{ color: 'primary.main' }}>Contact</Box> me
-                    </Typography>
+                    />
                     <Paper
                         component={motion.div}
                         variant="glass"

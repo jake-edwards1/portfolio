@@ -5,6 +5,7 @@ import { Box, Container, Typography, Accordion, AccordionSummary, AccordionDetai
 import { motion } from 'framer-motion';
 import { MdExpandMore } from 'react-icons/md';
 import { FaServer, FaNetworkWired, FaShieldAlt, FaCode, FaTools, FaDatabase } from 'react-icons/fa';
+import { TypewriterText } from '@/components/TypewriterText';
 
 const capabilities = [
     {
@@ -107,7 +108,8 @@ export const TechnicalCapabilities = () => {
             }}
         >
             <Container maxWidth="lg">
-                <Typography
+                <TypewriterText
+                    text="Technical Capabilities"
                     variant="h2"
                     sx={{
                         fontSize: { xs: '2.5rem', md: '3.5rem' },
@@ -116,9 +118,7 @@ export const TechnicalCapabilities = () => {
                         textAlign: 'center',
                         color: 'text.primary',
                     }}
-                >
-                    Technical Capabilities
-                </Typography>
+                />
 
                 <Typography
                     variant="body1"

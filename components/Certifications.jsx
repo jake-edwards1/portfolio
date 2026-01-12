@@ -5,6 +5,7 @@ import { Box, Container, Typography, Card, CardContent, Chip } from '@mui/materi
 import { motion } from 'framer-motion';
 import { FaAward, FaNetworkWired, FaShieldAlt, FaCode } from 'react-icons/fa';
 import { MdOutlineVerified } from 'react-icons/md';
+import { TypewriterText } from '@/components/TypewriterText';
 
 const certifications = [
     {
@@ -66,7 +67,8 @@ export const Certifications = () => {
             }}
         >
             <Container maxWidth="lg">
-                <Typography
+                <TypewriterText
+                    text="Certifications & Credentials"
                     variant="h2"
                     sx={{
                         fontSize: { xs: '2.5rem', md: '3.5rem' },
@@ -75,9 +77,7 @@ export const Certifications = () => {
                         textAlign: 'center',
                         color: 'text.primary',
                     }}
-                >
-                    Certifications & Credentials
-                </Typography>
+                />
 
                 <Typography
                     variant="body1"

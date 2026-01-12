@@ -3,6 +3,7 @@
 import React from 'react';
 import { Box, Container, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
+import { TypewriterText } from '@/components/TypewriterText';
 
 export const Philosophy = () => {
     const principles = [
@@ -10,10 +11,10 @@ export const Philosophy = () => {
             id: 1,
             text: "Technology serves people, not the other way around",
         },
-        {
-            id: 2,
-            text: "Full-stack understanding: hardware → networks → software → human experience",
-        },
+        // {
+        //     id: 2,
+        //     text: "Full-stack understanding: hardware → networks → software → human experience",
+        // },
         {
             id: 3,
             text: "Driven by impact, guided by empathy, grounded in technical excellence",
@@ -37,22 +38,16 @@ export const Philosophy = () => {
                     }}
                 >
                     {/* Section Title */}
-                    <Typography
+                    <TypewriterText
+                        text="Service-First Engineering"
                         variant="h2"
-                        component={motion.h2}
-                        initial={{ opacity: 0, y: -20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
                         sx={{
                             fontSize: { xs: '2.5rem', md: '3.5rem' },
                             fontWeight: 600,
                             mb: 3,
                             color: 'text.primary',
                         }}
-                    >
-                        Service-First Engineering
-                    </Typography>
+                    />
 
                     {/* Subtitle */}
                     {/*<Typography*/}
