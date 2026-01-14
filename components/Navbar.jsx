@@ -25,6 +25,37 @@ export const Navbar = () => {
         setNav(false)
     }
 
+    // Handle navigation click with smooth scrolling
+    const handleNavClick = (e, sectionId) => {
+        e.preventDefault();
+        closeNav(); // Close mobile menu if open
+
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            // Update URL hash without triggering navigation
+            window.history.pushState(null, '', sectionId === 'hero' ? '/' : `#${sectionId}`);
+        } else if (sectionId === 'hero') {
+            // Scroll to top for "About" section
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.history.pushState(null, '', '/');
+        }
+    };
+
+    // Handle initial hash on page load/refresh
+    useEffect(() => {
+        const hash = window.location.hash.replace('#', '');
+        if (hash) {
+            // Small delay to ensure DOM is ready
+            setTimeout(() => {
+                const section = document.getElementById(hash);
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }, 100);
+        }
+    }, []);
+
     // Track active section based on scroll position
     useEffect(() => {
         const handleScroll = () => {
@@ -103,7 +134,8 @@ export const Navbar = () => {
                             <Link
                                 key={link.title}
                                 href={link.path}
-                                style={{ textDecoration: 'none', position: 'relative' }}
+                                onClick={(e) => handleNavClick(e, link.id)}
+                                style={{ textDecoration: 'none', position: 'relative', cursor: 'pointer' }}
                             >
                                 <Typography
                                     suppressHydrationWarning
@@ -112,6 +144,7 @@ export const Navbar = () => {
                                         fontWeight: 'bold',
                                         transition: 'all 0.3s ease',
                                         position: 'relative',
+                                        cursor: 'pointer',
                                         '&:hover': {
                                             color: 'white',
                                         },
@@ -224,8 +257,8 @@ export const Navbar = () => {
                         <Link
                             key={link.title}
                             href={link.path}
-                            onClick={closeNav}
-                            style={{ textDecoration: 'none' }}
+                            onClick={(e) => handleNavClick(e, link.id)}
+                            style={{ textDecoration: 'none', cursor: 'pointer' }}
                         >
                             <Typography
                                 variant="h4"
@@ -234,6 +267,7 @@ export const Navbar = () => {
                                     fontWeight: 'bold',
                                     transition: 'all 0.3s ease',
                                     fontFamily: 'Fira Code, monospace',
+                                    cursor: 'pointer',
                                     '&:hover': {
                                         color: '#2DD4BF',
                                         transform: 'translateX(8px)',
