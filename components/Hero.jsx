@@ -11,7 +11,7 @@ export const Hero = () => {
     return (
         <Box
             component={motion.section}
-            id="about"
+            id="hero"
             sx={{
                 minHeight: '100vh',
                 overflow: 'hidden',

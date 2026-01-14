@@ -34,7 +34,7 @@ export const Contact = () => {
                         text="Contact Me"
                         variant="h2"
                         sx={{
-                            fontSize: { xs: '2.5rem', md: '3rem', lg: '4.5rem' },
+                            fontSize: { xs: '1.75rem', sm: '2.25rem', md: '3rem', lg: '4.5rem' },
                             fontWeight: 'bold',
                             color: 'text.primary',
                             p: 0.5,

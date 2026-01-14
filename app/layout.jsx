@@ -42,7 +42,7 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} ${firaCode.variable}`} suppressHydrationWarning>
-      <body className={inter.className} suppressHydrationWarning>
+      <body className={inter.className} suppressHydrationWarning style={{ overflowX: 'hidden' }}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
           {children}

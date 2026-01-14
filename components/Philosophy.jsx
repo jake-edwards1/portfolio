@@ -42,7 +42,7 @@ export const Philosophy = () => {
                         text="Service-First Engineering"
                         variant="h2"
                         sx={{
-                            fontSize: { xs: '2.5rem', md: '3.5rem' },
+                            fontSize: { xs: '1.75rem', sm: '2.25rem', md: '3.5rem' },
                             fontWeight: 600,
                             mb: 3,
                             color: 'text.primary',

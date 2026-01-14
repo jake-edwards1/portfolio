@@ -1,21 +1,22 @@
 "use client"
 
 import Link from "next/link";
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {AiOutlineMenu, AiOutlineClose} from 'react-icons/ai'
-import { AppBar, Paper, Drawer, Stack, IconButton, Typography } from '@mui/material';
+import { AppBar, Paper, Drawer, Stack, IconButton, Typography, Box } from '@mui/material';
 
 const navlinks = [
-    {title: "About", path: ""},
-    {title: "Philosophy", path: "#philosophy"},
-    {title: "Capabilities", path: "#capabilities"},
-    {title: "Certifications", path: "#certifications"},
-    {title: "Experience", path: "#experience"},
-    {title: "Contact", path: "#contact"},
+    {title: "About", path: "", id: "hero"},
+    {title: "Experience", path: "#experience", id: "experience"},
+    {title: "Capabilities", path: "#capabilities", id: "capabilities"},
+    {title: "Certifications", path: "#certifications", id: "certifications"},
+    {title: "Contact", path: "#contact", id: "contact"},
 ];
 
 export const Navbar = () => {
     const [nav, setNav] = useState(false)
+    const [activeSection, setActiveSection] = useState("")
+    const [mounted, setMounted] = useState(false)
 
     const toggleNav = () => {
         setNav(!nav)
@@ -23,6 +24,52 @@ export const Navbar = () => {
     const closeNav = () => {
         setNav(false)
     }
+
+    // Track active section based on scroll position
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollPosition = window.scrollY + 200; // Offset for navbar height + buffer
+
+            // Find which section we're currently in
+            for (let i = navlinks.length - 1; i >= 0; i--) {
+                const section = document.getElementById(navlinks[i].id);
+                if (section) {
+                    const sectionTop = section.offsetTop;
+                    if (scrollPosition >= sectionTop) {
+                        setActiveSection(navlinks[i].id);
+                        break;
+                    }
+                }
+            }
+        };
+
+        // Set mounted first to ensure consistent rendering
+        setMounted(true);
+
+        // Small delay to ensure DOM is fully ready
+        const timeoutId = setTimeout(() => {
+            handleScroll();
+        }, 0);
+
+        // Add scroll listener with throttling
+        let ticking = false;
+        const scrollListener = () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    handleScroll();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        };
+
+        window.addEventListener('scroll', scrollListener, { passive: true });
+
+        return () => {
+            clearTimeout(timeoutId);
+            window.removeEventListener('scroll', scrollListener);
+        };
+    }, []);
 
     return (
         <>
@@ -37,6 +84,7 @@ export const Navbar = () => {
                     alignItems: 'center',
                     pointerEvents: 'none',
                 }}
+                suppressHydrationWarning
             >
                 <Paper
                     variant="glass"
@@ -46,29 +94,54 @@ export const Navbar = () => {
                         p: 1,
                         display: { xs: 'none', md: 'flex' },
                         justifyContent: 'center',
-                        // maxWidth: '400px',
                         pointerEvents: 'auto',
+                        position: 'relative',
                     }}
                 >
-                    <Stack direction="row" spacing={4} sx={{ p: 1 }}>
-                        {navlinks.map((link) => (
+                    <Stack direction="row" spacing={4} sx={{ p: 1, position: 'relative' }}>
+                        {navlinks.map((link, index) => (
                             <Link
                                 key={link.title}
                                 href={link.path}
-                                style={{ textDecoration: 'none' }}
+                                style={{ textDecoration: 'none', position: 'relative' }}
                             >
                                 <Typography
+                                    suppressHydrationWarning
                                     sx={{
-                                        color: 'white',
+                                        color: mounted && activeSection === link.id ? 'white' : 'rgba(255, 255, 255, 0.7)',
                                         fontWeight: 'bold',
                                         transition: 'all 0.3s ease',
+                                        position: 'relative',
                                         '&:hover': {
-                                            color: 'rgba(255, 255, 255, 0.5)',
+                                            color: 'white',
                                         },
                                     }}
                                 >
                                     {link.title}
                                 </Typography>
+                                {/* Active indicator underline */}
+                                {mounted && activeSection === link.id && (
+                                    <Box
+                                        sx={{
+                                            position: 'absolute',
+                                            bottom: -4,
+                                            left: 0,
+                                            right: 0,
+                                            height: '2px',
+                                            background: '#2DD4BF',
+                                            borderRadius: '2px',
+                                            animation: 'slideIn 0.3s ease',
+                                            '@keyframes slideIn': {
+                                                from: {
+                                                    transform: 'scaleX(0)',
+                                                },
+                                                to: {
+                                                    transform: 'scaleX(1)',
+                                                },
+                                            },
+                                        }}
+                                    />
+                                )}
                             </Link>
                         ))}
                     </Stack>
@@ -78,23 +151,27 @@ export const Navbar = () => {
             {/* Mobile Menu Button */}
             <IconButton
                 onClick={toggleNav}
+                suppressHydrationWarning
                 sx={{
-                    display: { xs: 'block', md: 'none' },
+                    display: { xs: nav ? 'none' : 'flex', md: 'none' },
                     position: 'fixed',
-                    top: { xs: 20, sm: 40 },
-                    left: { xs: 20, sm: 40 },
+                    top: { xs: 20, sm: 32 },
+                    left: { xs: 20, sm: 32 },
                     zIndex: 1300,
-                    color: 'rgba(255, 255, 255, 0.7)',
-                    border: '1px solid rgba(255, 255, 255, 0.7)',
-                    borderRadius: '4px',
-                    p: 1,
+                    color: 'white',
+                    background: 'rgba(255, 255, 255, 0.1)',
+                    backdropFilter: 'blur(10px)',
+                    border: '1px solid rgba(255, 255, 255, 0.2)',
+                    borderRadius: '12px',
+                    p: 1.5,
+                    transition: 'all 0.3s ease',
+                    '&:hover': {
+                        background: 'rgba(255, 255, 255, 0.15)',
+                        transform: 'scale(1.05)',
+                    },
                 }}
             >
-                {nav ? (
-                    <AiOutlineClose style={{ width: '24px', height: '24px' }} />
-                ) : (
                     <AiOutlineMenu style={{ width: '24px', height: '24px' }} />
-                )}
             </IconButton>
 
             {/* Mobile Drawer */}
@@ -106,16 +183,41 @@ export const Navbar = () => {
                     display: { xs: 'block', md: 'none' },
                     '& .MuiDrawer-paper': {
                         width: '100%',
-                        background: 'rgba(0, 0, 0, 0.9)',
+                        background: 'rgba(0, 0, 0, 0.95)',
+                        backdropFilter: 'blur(10px)',
                     },
                 }}
             >
-                <Stack
-                    spacing={4}
+                {/* Close Button - Top Right */}
+                <IconButton
+                    onClick={closeNav}
                     sx={{
-                        height: '100%',
-                        justifyContent: 'center',
-                        alignItems: 'center',
+                        position: 'absolute',
+                        top: { xs: 20, sm: 32 },
+                        right: { xs: 20, sm: 32 },
+                        color: 'white',
+                        background: 'rgba(255, 255, 255, 0.1)',
+                        backdropFilter: 'blur(10px)',
+                        border: '1px solid rgba(255, 255, 255, 0.2)',
+                        borderRadius: '12px',
+                        p: 1.5,
+                        transition: 'all 0.3s ease',
+                        '&:hover': {
+                            background: 'rgba(255, 255, 255, 0.15)',
+                            transform: 'scale(1.05)',
+                        },
+                    }}
+                >
+                    <AiOutlineClose style={{ width: '24px', height: '24px' }} />
+                </IconButton>
+
+                {/* Navigation Links - Left & Top Aligned */}
+                <Stack
+                    spacing={3.5}
+                    sx={{
+                        pt: { xs: 16, sm: 20 },
+                        pl: { xs: 6, sm: 8 },
+                        pr: 4,
                     }}
                 >
                     {navlinks.map((link) => (
@@ -126,13 +228,15 @@ export const Navbar = () => {
                             style={{ textDecoration: 'none' }}
                         >
                             <Typography
-                                variant="h5"
+                                variant="h4"
                                 sx={{
                                     color: 'white',
                                     fontWeight: 'bold',
                                     transition: 'all 0.3s ease',
+                                    fontFamily: 'Fira Code, monospace',
                                     '&:hover': {
-                                        color: 'rgba(255, 255, 255, 0.5)',
+                                        color: '#2DD4BF',
+                                        transform: 'translateX(8px)',
                                     },
                                 }}
                             >

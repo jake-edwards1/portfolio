@@ -71,7 +71,7 @@ export const Certifications = () => {
                     text="Certifications & Credentials"
                     variant="h2"
                     sx={{
-                        fontSize: { xs: '2.5rem', md: '3.5rem' },
+                        fontSize: { xs: '1.75rem', sm: '2.25rem', md: '3.5rem' },
                         fontWeight: 600,
                         mb: 2,
                         textAlign: 'center',

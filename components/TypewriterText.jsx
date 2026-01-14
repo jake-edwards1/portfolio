@@ -82,6 +82,8 @@ export const TypewriterText = ({
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
+                maxWidth: '100%',
+                width: '100%',
                 ...sx,
             }}
         >
@@ -91,7 +93,11 @@ export const TypewriterText = ({
                 sx={{
                     display: 'flex',
                     alignItems: 'center',
+                    flexWrap: 'wrap',
                     fontFamily: 'var(--font-fira-code), "Fira Code", monospace',
+                    maxWidth: '100%',
+                    overflowWrap: 'break-word',
+                    wordBreak: 'break-word',
                     ...sx,
                 }}
             >
@@ -105,6 +111,7 @@ export const TypewriterText = ({
                             color: '#2DD4BF',
                             marginRight: '0.5rem',
                             fontWeight: 700,
+                            flexShrink: 0,
                         }}
                     >
                         &gt;
@@ -116,7 +123,11 @@ export const TypewriterText = ({
                     variants={containerVariants}
                     initial="hidden"
                     animate={hasTyped ? "visible" : "hidden"}
-                    style={{ display: 'inline-flex' }}
+                    style={{
+                        display: 'inline-flex',
+                        flexWrap: 'wrap',
+                        maxWidth: '100%'
+                    }}
                 >
                     {text.split('').map((char, index) => (
                         <motion.span
@@ -136,6 +147,7 @@ export const TypewriterText = ({
                         color: '#2DD4BF',
                         marginLeft: '0.25rem',
                         fontWeight: 700,
+                        flexShrink: 0,
                     }}
                 >
                     _
