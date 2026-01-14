@@ -68,7 +68,7 @@ export const Certifications = () => {
         >
             <Container maxWidth="lg">
                 <TypewriterText
-                    text="Certifications & Credentials"
+                    text="Certifications"
                     variant="h2"
                     sx={{
                         fontSize: { xs: '1.75rem', sm: '2.25rem', md: '3.5rem' },

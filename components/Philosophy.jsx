@@ -39,7 +39,7 @@ export const Philosophy = () => {
                 >
                     {/* Section Title */}
                     <TypewriterText
-                        text="Service-First Engineering"
+                        text="Philosophy"
                         variant="h2"
                         sx={{
                             fontSize: { xs: '1.75rem', sm: '2.25rem', md: '3.5rem' },

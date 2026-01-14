@@ -15,13 +15,13 @@ import { motion, useInView } from 'framer-motion';
  * @param {number} speed - Speed of typing in seconds per character (default: 0.05)
  */
 export const TypewriterText = ({
-    text,
-    sx = {},
-    variant = "h2",
-    delay = 0.3,
-    speed = 0.05,
-    showPrompt = true
-}) => {
+                                   text,
+                                   sx = {},
+                                   variant = "h2",
+                                   delay = 0.3,
+                                   speed = 0.05,
+                                   showPrompt = true
+                               }) => {
     const ref = React.useRef(null);
     const isInView = useInView(ref, { once: true, margin: "-100px" });
     const [hasTyped, setHasTyped] = useState(false);
@@ -75,6 +75,9 @@ export const TypewriterText = ({
         }
     };
 
+    // Split text into words to prevent mid-word line breaks
+    const words = text.split(' ');
+
     return (
         <Box
             ref={ref}
@@ -91,13 +94,9 @@ export const TypewriterText = ({
                 variant={variant}
                 component="div"
                 sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    flexWrap: 'wrap',
+                    display: 'inline',
                     fontFamily: 'var(--font-fira-code), "Fira Code", monospace',
                     maxWidth: '100%',
-                    overflowWrap: 'break-word',
-                    wordBreak: 'break-word',
                     ...sx,
                 }}
             >
@@ -111,31 +110,49 @@ export const TypewriterText = ({
                             color: '#2DD4BF',
                             marginRight: '0.5rem',
                             fontWeight: 700,
-                            flexShrink: 0,
                         }}
                     >
                         &gt;
                     </motion.span>
                 )}
 
-                {/* Typed text */}
+                {/* Typed text - grouped by words */}
                 <motion.span
                     variants={containerVariants}
                     initial="hidden"
                     animate={hasTyped ? "visible" : "hidden"}
                     style={{
-                        display: 'inline-flex',
-                        flexWrap: 'wrap',
-                        maxWidth: '100%'
+                        display: 'inline'
                     }}
                 >
-                    {text.split('').map((char, index) => (
-                        <motion.span
-                            key={`${char}-${index}`}
-                            variants={charVariants}
+                    {words.map((word, wordIndex) => (
+                        <span
+                            key={`word-${wordIndex}`}
+                            style={{
+                                display: 'inline-block',
+                                overflowWrap: 'break-word'
+                            }}
                         >
-                            {char === ' ' ? '\u00A0' : char}
-                        </motion.span>
+                            {word.split('').map((char, charIndex) => (
+                                <motion.span
+                                    key={`${wordIndex}-${charIndex}`}
+                                    variants={charVariants}
+                                    style={{ display: 'inline-block' }}
+                                >
+                                    {char}
+                                </motion.span>
+                            ))}
+                            {/* Add space after word (except last word) */}
+                            {wordIndex < words.length - 1 && (
+                                <motion.span
+                                    key={`space-${wordIndex}`}
+                                    variants={charVariants}
+                                    style={{ display: 'inline-block' }}
+                                >
+                                    {'\u00A0'}
+                                </motion.span>
+                            )}
+                        </span>
                     ))}
                 </motion.span>
 
@@ -147,7 +164,6 @@ export const TypewriterText = ({
                         color: '#2DD4BF',
                         marginLeft: '0.25rem',
                         fontWeight: 700,
-                        flexShrink: 0,
                     }}
                 >
                     _

@@ -109,7 +109,7 @@ export const TechnicalCapabilities = () => {
         >
             <Container maxWidth="lg">
                 <TypewriterText
-                    text="Technical Capabilities"
+                    text="Capabilities"
                     variant="h2"
                     sx={{
                         fontSize: { xs: '1.75rem', sm: '2.25rem', md: '3.5rem' },
