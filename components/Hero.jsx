@@ -184,7 +184,7 @@ export const Hero = () => {
                     {/* Scroll Indicator */}
                     <Box
                         component="a"
-                        href="#capabilities"
+                        href="#philosophy"
                         sx={{
                             position: 'absolute',
                             bottom: 28,
