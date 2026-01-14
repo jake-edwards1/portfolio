@@ -36,15 +36,6 @@ const certifications = [
         status: "Certified"
     },
     {
-        id: 4,
-        name: "CWNA",
-        provider: "CWNP",
-        icon: FaNetworkWired,
-        color: '#64748B',
-        description: "Certified Wireless Network Administrator - RF fundamentals and WLAN design",
-        status: "In Progress"
-    },
-    {
         id: 5,
         name: "Web Development Certificate",
         provider: "BYUI",
@@ -52,6 +43,15 @@ const certifications = [
         color: '#94A3B8',
         description: "Full-stack web development and modern frameworks",
         status: "Certified"
+    },
+    {
+        id: 4,
+        name: "CWNA",
+        provider: "CWNP",
+        icon: FaNetworkWired,
+        color: '#64748B',
+        description: "Certified Wireless Network Administrator - RF fundamentals and WLAN design",
+        status: "In Progress"
     },
 ];
 

@@ -1,9 +1,8 @@
 "use client"
 
 import Image from "next/image";
-import {motion} from "framer-motion";
-import React from "react";
-import { Box, Container } from '@mui/material';
+import React, { useRef, useEffect, useState } from "react";
+import { Box, Container, useTheme, useMediaQuery } from '@mui/material';
 // Infrastructure & Cloud
 import aws_logo from "@/assets/logos/aws.png"
 import azureLogo from "@/assets/logos/azure.png"
@@ -56,8 +55,22 @@ const images = [
 ]
 
 export const LogoAnimation = () => {
-    // Duplicate images for seamless loop
-    const duplicatedImages = [...images, ...images];
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+    const containerRef = useRef(null);
+    const [duration, setDuration] = useState(30); // Default fallback
+
+    const logoHeight = isMobile ? 30 : 40;
+
+    useEffect(() => {
+        // Measure the actual rendered width of the content
+        if (containerRef.current) {
+            const contentWidth = containerRef.current.scrollWidth / 2; // Divide by 2 since we duplicate
+            const targetSpeed = isMobile ? 100 : 50; // pixels per second
+            const calculatedDuration = contentWidth / targetSpeed;
+            setDuration(calculatedDuration);
+        }
+    }, [isMobile]);
 
     return (
         <Box
@@ -73,31 +86,35 @@ export const LogoAnimation = () => {
                 <Box
                     sx={{
                         overflow: 'hidden',
-                        maskImage: 'linear-gradient(to right, transparent, black 20%, black 80%, transparent)',
-                        WebkitMaskImage: 'linear-gradient(to right, transparent, black 20%, black 80%, transparent)',
+                        maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
+                        WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
                     }}
                 >
                     <Box
-                        component={motion.div}
+                        ref={containerRef}
                         sx={{
                             display: 'flex',
-                            gap: 8,
-                            pr: 8,
-                        }}
-                        animate={{ translateX: '-50%' }}
-                        transition={{
-                            duration: 40,
-                            repeat: Infinity,
-                            ease: "linear",
-                            repeatType: "loop",
+                            gap: { xs: 4, md: 8 },
+                            willChange: 'transform',
+                            animation: `scroll ${duration}s linear infinite`,
+                            '@keyframes scroll': {
+                                '0%': {
+                                    transform: 'translate3d(0, 0, 0)',
+                                },
+                                '100%': {
+                                    transform: 'translate3d(-50%, 0, 0)',
+                                },
+                            },
                         }}
                     >
-                        {duplicatedImages.map((image, index) => (
+                        {/* Render logos twice for seamless loop */}
+                        {[...images, ...images].map((image, index) => (
                             <Box
                                 key={index}
                                 sx={{
-                                    filter: 'grayscale(100%) brightness(0.7)',
+                                    filter: 'grayscale(10%) brightness(0.7)',
                                     transition: 'filter 0.3s ease',
+                                    flexShrink: 0,
                                     '&:hover': {
                                         filter: 'grayscale(0%) brightness(1)',
                                     },
@@ -106,8 +123,8 @@ export const LogoAnimation = () => {
                                 <Image
                                     src={image.src}
                                     alt={image.alt}
-                                    height={40}
-                                    style={{ opacity: 0.6 }}
+                                    height={logoHeight}
+                                    style={{ display: 'block', width: 'auto', height: logoHeight }}
                                 />
                             </Box>
                         ))}
