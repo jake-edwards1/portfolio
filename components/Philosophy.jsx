@@ -129,18 +129,18 @@ export const Philosophy = () => {
                             borderColor: 'steel.dark',
                         }}
                     >
-                        <Typography
-                            sx={{
-                                fontSize: { xs: '1rem', md: '1.125rem' },
-                                lineHeight: 1.9,
-                                color: 'text.primary',
-                                fontWeight: 500,
-                                fontStyle: 'italic',
-                            }}
-                        >
-                            &ldquo;While I loved the logic of software engineering, I missed the impact.
-                            Human connection is what drives me, not just code.&rdquo;
-                        </Typography>
+                        {/*<Typography*/}
+                        {/*    sx={{*/}
+                        {/*        fontSize: { xs: '1rem', md: '1.125rem' },*/}
+                        {/*        lineHeight: 1.9,*/}
+                        {/*        color: 'text.primary',*/}
+                        {/*        fontWeight: 500,*/}
+                        {/*        fontStyle: 'italic',*/}
+                        {/*    }}*/}
+                        {/*>*/}
+                        {/*    &ldquo;While I loved the logic of software engineering, I missed the impact.*/}
+                        {/*    Human connection is what drives me, not just code.&rdquo;*/}
+                        {/*</Typography>*/}
                     </Box>
                 </Box>
             </Container>
